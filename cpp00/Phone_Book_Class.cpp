@@ -3,7 +3,7 @@
 
 Phonebook::Phonebook(void)
 {
-    std::cout << "Constructeur called" << std::endl;
+    std::cout << "Constructeur Phone called" << std::endl;
     return;
 }
 
@@ -11,4 +11,12 @@ Phonebook::~Phonebook(void)
 {
     std::cout << "Destructeur called" << std::endl;
     return;
+}
+
+void	Phonebook::ft_search(void)
+{
+}
+
+void	Phonebook::ft_add(void)
+{
 }

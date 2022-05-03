@@ -4,11 +4,6 @@
 #include <string>
 
 
-void	ft_add(Phonebook repertoire)
-{}
-
-void	ft_search(Phonebook repertoire)
-{}
 
 int	ft_strlen(std::string s1)
 {
@@ -41,16 +36,16 @@ int	ft_strncmp(std::string s1, const char *s2, int n)
 int main()
 {
 	Phonebook	repertoire;
-
 	std::string name;
-//	char	*name;
+
 	while (1)
 	{
+		std::cout << ">";
 		std::getline(std::cin, name);
 		if (ft_strncmp(name, "ADD", 3) == 0 && ft_strlen(name) == 3)
-			ft_add(repertoire);
+			repertoire.ft_add();
 		else if (ft_strncmp(name, "ADD", 3) == 0 && ft_strlen(name) == 3)
-			ft_search(repertoire);
+			repertoire.ft_search();
 		else if (ft_strncmp(name, "EXIT", 4) == 0 && ft_strlen(name) == 4)
 			return (0);
 	}

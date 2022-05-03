@@ -1,12 +1,20 @@
 #ifndef PHONE_BOOK_H
 # define PHONE_BOOk_H
 
+
+# include "Contact_Class.hpp"
+
 class Phonebook
 {
-    public:
-        Phonebook( void);
-        ~Phonebook( void);
-    int	tab[8];
+	public:
+        	Phonebook( void);
+		~Phonebook( void);
+		
+		void	ft_search(void);
+		void	ft_add(void);
+	private :
+		Contact contacts[8];
+		int nb;
 
 };
 
