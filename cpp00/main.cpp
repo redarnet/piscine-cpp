@@ -5,7 +5,7 @@
 
 
 
-int	ft_strlen(std::string s1)
+int	ft_strlen(char *s1)
 {
 	int i;
 
@@ -14,7 +14,7 @@ int	ft_strlen(std::string s1)
 		i++;
 	return i;
 }
-int	ft_strncmp(std::string s1, const char *s2, int n)
+int	ft_strncmp(char *s1, const char *s2, int n)
 {
 	std::string str1;
 	unsigned char	*str2;
@@ -36,15 +36,15 @@ int	ft_strncmp(std::string s1, const char *s2, int n)
 int main()
 {
 	Phonebook	repertoire;
-	std::string name;
+	char  name[512];
 
 	while (1)
 	{
-		std::cout << ">";
-		std::getline(std::cin, name);
+		std::cout << "Phonebook > ";
+		std::cin >> name;
 		if (ft_strncmp(name, "ADD", 3) == 0 && ft_strlen(name) == 3)
 			repertoire.ft_add();
-		else if (ft_strncmp(name, "ADD", 3) == 0 && ft_strlen(name) == 3)
+		else if (ft_strncmp(name, "SEARCH", 6) == 0 && ft_strlen(name) == 6)
 			repertoire.ft_search();
 		else if (ft_strncmp(name, "EXIT", 4) == 0 && ft_strlen(name) == 4)
 			return (0);

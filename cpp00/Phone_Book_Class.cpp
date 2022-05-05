@@ -1,22 +1,46 @@
 #include <iostream>
 #include "Phone_Book_Class.hpp"
+#include <string>
 
 Phonebook::Phonebook(void)
 {
-    std::cout << "Constructeur Phone called" << std::endl;
-    return;
+	this->nb = 0;
+	this->count = -1;
+	return;
 }
 
 Phonebook::~Phonebook(void)
 {
-    std::cout << "Destructeur called" << std::endl;
-    return;
+	return;
 }
 
 void	Phonebook::ft_search(void)
 {
+	int index;
+	char	tmp[512];
+
+	std::cout << "Index" << std::endl;
+	std::cin >> tmp;
+	if (!isdigit(tmp[0]))
+	{
+		std::cout << "Mauvais index" << std::endl;
+		return ;
+	}
+	index = atoi(tmp);
+	if (index <= count)
+		contacts[index].search_contact();
+	else
+		std::cout << "Mauvais index" << std::endl;
+
 }
 
 void	Phonebook::ft_add(void)
 {
+	if (count < 7)
+		this->count++;
+	if (nb > 7)
+		this->nb = 0;
+	std::cout << nb << std::endl;
+	contacts[nb].add_contact();
+	this->nb++;
 }

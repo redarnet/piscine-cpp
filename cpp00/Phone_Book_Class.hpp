@@ -9,12 +9,13 @@ class Phonebook
 	public:
         	Phonebook( void);
 		~Phonebook( void);
-		
+
 		void	ft_search(void);
 		void	ft_add(void);
 	private :
 		Contact contacts[8];
 		int nb;
+		int count;
 
 };
 
