@@ -11,6 +11,7 @@ class Contact
 
 		void	add_contact(void);
 		void	search_contact(void);
+		void	ft_affiche_contact(void);
 	private:
 
 		char prenom[512];

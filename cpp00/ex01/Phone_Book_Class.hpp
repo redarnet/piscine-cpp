@@ -12,6 +12,7 @@ class Phonebook
 
 		void	ft_search(void);
 		void	ft_add(void);
+		void	ft_affiche_contact(void);
 	private :
 		Contact contacts[8];
 		int nb;

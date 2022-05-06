@@ -38,6 +38,7 @@ int main()
 	Phonebook	repertoire;
 	char  name[512];
 
+
 	while (1)
 	{
 		std::cout << "Phonebook > ";

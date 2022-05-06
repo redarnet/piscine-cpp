@@ -49,3 +49,27 @@ void	Contact::search_contact(void)
 	std::cout << surnom<< std::endl;
 	std::cout << telephone<< std::endl;
 }
+
+void	affiche_contact(char *str)
+{
+	int i;
+
+	i = strlen(str);
+	if (i < 10)
+	{
+		std::cout << "|" << str;
+		while (i != 10)
+		{
+			std::cout<< " ";
+			i++;
+		}
+	}
+
+}
+void	Contact::ft_affiche_contact(void)
+{
+	affiche_contact(prenom);
+	affiche_contact(famille);
+	affiche_contact(surnom);
+	affiche_contact(telephone);
+}
