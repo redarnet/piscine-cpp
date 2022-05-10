@@ -1,8 +1,9 @@
 #include "Zombie.hpp"
 #include <iostream>
 
-Zombie::Zombie(std::string name)
+Zombie::Zombie(std::string _name)
 {
+	this->_name = _name;
 	return;
 }
 
@@ -14,6 +15,7 @@ Zombie::~Zombie(void)
 
 void	Zombie::annouce(void)
 {
-	std::cout << "[" << this->name  << "]";
+
+	std::cout << "[" << this->_name  << "]";
 	std::cout << "BraiiiiiiinnnzzzZ..." << std::endl;
 }
