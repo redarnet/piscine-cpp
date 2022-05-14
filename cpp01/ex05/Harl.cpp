@@ -37,5 +37,6 @@ void Harl::complain(std::string level)
 //	monpoit = &Harl::info;
 	//std::cout << monpoit << std::endl;
 	monpoit;
+ 	(this->*monpoit)();
 //	Harl::info();
 }

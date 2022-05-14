@@ -12,11 +12,11 @@ HumanB::~HumanB()
 
 void	HumanB::attack()
 {
-	std::cout << type ;
+	std::cout << this->_weapon->getType() ;
 	std::cout << "HumanB attack" << std::endl;
 }
 
-void HumanB::setWeapon(Weapon _weapon)
+void HumanB::setWeapon(Weapon &w)
 {
-	*type = _weapon;
+	this->_weapon = &w;
 }
