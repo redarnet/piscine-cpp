@@ -22,16 +22,17 @@ void	Phonebook::ft_search(void)
 
 
 	i = 0;
-	std::cout << "| Index   " ;
-	std::cout << "|Famille  " ;
-	std::cout << "|Surnom   " ;
-	std::cout << "|Telephone|" << std::endl;
+	std::cout << "| Index    " ;
+	std::cout << "|Famille   " ;
+	std::cout << "|Surnom    " ;
+	std::cout << "|Telephone |" << std::endl;
 	while (i != nb)
 	{
 		contacts[i].ft_affiche_contact();
+		std::cout << "|";
+		std::cout<< std::endl;
 		i++;
 	}
-	/*
 	std::cout << "Index" << std::endl;
 	std::cin >> tmp;
 	if (!isdigit(tmp[0]))
@@ -44,7 +45,7 @@ void	Phonebook::ft_search(void)
 		contacts[index].search_contact();
 	else
 		std::cout << "Mauvais index" << std::endl;
-		*/
+
 
 }
 

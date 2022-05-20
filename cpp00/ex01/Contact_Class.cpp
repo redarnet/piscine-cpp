@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstring>
 #include "Contact_Class.hpp"
 
 Contact::Contact(void)
@@ -53,9 +54,11 @@ void	Contact::search_contact(void)
 void	affiche_contact(char *str)
 {
 	int i;
+	int j;
 
 	i = strlen(str);
-	if (i < 10)
+	j = 0;
+	if (i < 9)
 	{
 		std::cout << "|" << str;
 		while (i != 10)
@@ -63,6 +66,16 @@ void	affiche_contact(char *str)
 			std::cout<< " ";
 			i++;
 		}
+	}
+	else if (i >= 9)
+	{
+		std::cout << "|";
+		while (j != 9)
+		{
+			std::cout << str[j];
+			j++;
+		}
+		std::cout<< ".";
 	}
 
 }

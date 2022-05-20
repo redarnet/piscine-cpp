@@ -5,6 +5,6 @@
 int main()
 {
 	Harl Na;
-	Na.complain("2");
+	Na.complain("DEBUG");
 	return 0;
 }

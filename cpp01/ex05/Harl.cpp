@@ -25,18 +25,25 @@ void	Harl::warning(void)
 	std::cout << "warning" << std::endl;
 }
 
-void	error(void)
+void	Harl::error(void)
 {
 	std::cout << "error" << std::endl;
 }
 
 void Harl::complain(std::string level)
 {
-	void (Harl::*monpoit)() = &Harl::info;
+	std::string str[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	void (Harl::*monpoint[4])(void);
+	int i;
 
-//	monpoit = &Harl::info;
-	//std::cout << monpoit << std::endl;
-	monpoit;
- 	(this->*monpoit)();
-//	Harl::info();
+	monpoint[0] = &Harl::debug;
+	monpoint[1] = &Harl::info;
+	monpoint[2] = &Harl::warning;
+	monpoint[3] = &Harl::error;
+	for (i = 0; i != 3; i++)
+	{
+		if (level == str[i])
+			break;
+	}
+ 	(this->*monpoint[i])();
 }
