@@ -1,0 +1,13 @@
+class abstraitre
+ class Aclass
+
+ devra avoir se comportement meme si la class mere en a pas
+
+
+class interface
+	pas d atribu
+	que des l abstraitre
+
+heritage polymorphism
+
+	

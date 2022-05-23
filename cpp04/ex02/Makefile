@@ -1,12 +1,13 @@
-NAME = ScavTrap
+NAME = Ani
 
 CC = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC =	main.cpp\
-		ClapTrap.cpp\
-		ScavTrap.cpp
+		Animal.cpp\
+		WrongAnimal.cpp\
+		Brain.cpp
 
 OBJS = $(SRC:.cpp=.o)
 
