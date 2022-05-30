@@ -1,0 +1,32 @@
+c propose 2 cast
+  meme syntaxe comportement different
+
+
+  int a = 42
+  double b = a  = cast implicite
+  double b = (double)a cast explicite \
+
+
+  cpp cast
+  static cast convertion simple
+
+
+
+dynamic cast a lieu apres la compilation a l exetution
+				fonctionne que dqns le cas d une instance poly
+				une fonction membre doit etre virtual
+savoir le type du plugin
+
+reinterpret cast
+	plus permisif
+	int & b = reinterpret_cast<int &b>(a);
+	cas commun = retypage
+
+const cast
+int a = 42;
+int const *b = &a;
+	int *d = const_cast<int *d >(b)
+
+
+explicit 
+	
