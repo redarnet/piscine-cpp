@@ -39,8 +39,6 @@ void	Contact::add_contact(void)
 			i++;
 		}
 	}
-
-	//std::cin >> this->telephone;
 }
 
 void	Contact::search_contact(void)
@@ -51,12 +49,12 @@ void	Contact::search_contact(void)
 	std::cout << telephone<< std::endl;
 }
 
-void	affiche_contact(char *str)
+void	affiche_contact(std::string str)
 {
 	int i;
 	int j;
 
-	i = strlen(str);
+	i = str.length();
 	j = 0;
 	if (i < 9)
 	{
@@ -77,8 +75,8 @@ void	affiche_contact(char *str)
 		}
 		std::cout<< ".";
 	}
-
 }
+
 void	Contact::ft_affiche_contact(void)
 {
 	affiche_contact(prenom);

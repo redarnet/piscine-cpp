@@ -14,13 +14,11 @@ class Contact
 		void	ft_affiche_contact(void);
 	private:
 
-		char prenom[512];
-		char famille[512];
-		char surnom[512];
-		char secret[512];
-		char telephone[512];
-		//int telephone;
-
+		std::string famille;
+		std::string prenom;
+		std::string surnom;
+		std::string secret;
+		std::string telephone;
 };
 
 #endif

@@ -12,7 +12,7 @@ int main()
 
 	Parent * b = &a //Inpplicit upcast -> ok
 	Child1 * c = b //implicit downcast -> no
-	Child2	* d =  static_const<Child2 * >(b) //explicit downcast -> ok
+	Child2	* d =  static_cast<Child2 * >(b) //explicit downcast -> ok
 
-	unrelated *e = static_const<unrelated *>(&a) //explicit convertion => no
+	unrelated *e = static_cast<unrelated *>(&a) //explicit convertion => no
 }

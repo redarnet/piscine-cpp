@@ -1,0 +1,5 @@
+virtual class scravtrap et FragTrap
+> name des deux
+> herite en premier de la deuxieme class
+> public : ClapTrap , scravtrap
+>

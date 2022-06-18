@@ -4,12 +4,12 @@
 
 int main(int argc, char **argv)
 {
-	Harl filter;
+//	Harl filter;
 	if (argc != 2)
 	{
 		std::cout << " Probably complaining about insignificant problems ]" << std::endl;
 		return 0;
 	}
-	filter.complain(argv[1]);
+//	filter.complain(argv[1]);
 	return 0;
 }

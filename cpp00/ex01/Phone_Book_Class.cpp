@@ -26,7 +26,7 @@ void	Phonebook::ft_search(void)
 	std::cout << "|Famille   " ;
 	std::cout << "|Surnom    " ;
 	std::cout << "|Telephone |" << std::endl;
-	while (i != nb)
+	while (i != this->count + 1)
 	{
 		contacts[i].ft_affiche_contact();
 		std::cout << "|";
