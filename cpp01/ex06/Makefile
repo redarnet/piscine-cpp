@@ -1,28 +1,34 @@
 NAME = harlFilter
 
 CC = c++
+SRC_DIR = .
+OBJ_DIR = obj
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
+
+OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:%.cpp=%.o))
 
 SRC =	main.cpp\
 		Harl.cpp
 
-OBJS = $(SRC:.cpp=.o)
-
-
-
-%.o:	%.c
-		$(CC) $(FLAGS) -c $< -o $@
-
 all:  $(NAME)
 
-$(NAME): $(OBJS)
-	 $(CC)  $(FLAGS) -o $@ $^
+$(OBJ_DIR)/%.o : $(SRC_DIR)/%.cpp
+	@mkdir -p $(OBJ_DIR)
+	c++ $(FLAGS) -c $< -o $@
+
+
+$(NAME): $(OBJ)
+	c++  $(OBJ)  $(FLAGS) -o $@
 
 
 clean:
-	rm -rf $(OBJS)
+	rm -rf $(OBJ)
+	rm -rf $(OBJ_DIR)
+
 fclean:
-	rm -rf $(OBJS)
+	rm -rf $(OBJ_DIR)
+	rm -rf $(OBJ)
 	rm -rf $(NAME)
+
 re: fclean all

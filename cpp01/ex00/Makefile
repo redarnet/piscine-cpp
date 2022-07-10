@@ -21,13 +21,15 @@ $(OBJ_DIR)/%.o : $(SRC_DIR)/%.cpp
 
 
 $(NAME): $(OBJ)
-	c++  $(OBJ)  $(FLAGS) -o $@ 
+	c++  $(OBJ)  $(FLAGS) -o $@
 
 
 clean:
+	rm -rf $(OBJ_DIR)
 	rm -rf $(OBJ)
 
 fclean:
+	rm -rf $(OBJ_DIR)
 	rm -rf $(OBJ)
 	rm -rf $(NAME)
 

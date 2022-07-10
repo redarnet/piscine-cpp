@@ -20,10 +20,10 @@ int main()
 	std::cout << k->getType() << " " << std::endl;
 
 	k->makeSound(); //will output the cat sound!
-	delete(meta);
-	delete(k);
-	delete(i);
-	delete(j);
+	// delete(meta);
+	// delete(k);
+	// delete(i);
+	// delete(j);
 
 
 

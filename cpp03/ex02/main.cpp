@@ -9,6 +9,8 @@ int main()
 
 
 	Sa.attack("target");
+	Sa.takeDamage(6);
+	Sa.beRepaired(6);
 	Sa.highFiveGuys();
 
 

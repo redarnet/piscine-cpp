@@ -11,7 +11,7 @@ class WrongAnimal
 		WrongAnimal(std::string _type);
 		~WrongAnimal(void);
 		WrongAnimal & operator=(WrongAnimal const & rhs);
-		const virtual void makeSound() const;
+		virtual void makeSound();
 		const std::string 	&getType() const;
 	protected:
 		std::string _type;
@@ -23,7 +23,7 @@ class WrongDog : public WrongAnimal
 		WrongDog(void);
 		WrongDog(std::string _type);
 		~WrongDog(void);
-		const virtual void makeSound() const ;
+		virtual void makeSound();
 };
 
 class WrongCat : public WrongAnimal
@@ -32,7 +32,7 @@ class WrongCat : public WrongAnimal
 		WrongCat(void);
 		WrongCat(std::string _type);
 		~WrongCat(void);
-		const virtual void makeSound() const;
+		virtual void makeSound();
 };
 
 

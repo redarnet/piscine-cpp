@@ -1,0 +1,18 @@
+Le moyen le plus simple (pour autant que je sache) consiste à 
+choisir un facteur d'échelle
+  (les puissances de deux sont les plus pratiques)
+ , puis à stocker les valeurs que vous souhaitez représenter, 
+ mises à l'échelle par ce facteur. 
+ Donc, pour convertir un nombre à virgule flottante en
+  cette représentation à virgule fixe, 
+  il vous suffit de multiplier le nombre par 
+  votre facteur d'échelle et d'arrondir à un nombre entier.
+   La valeur résultante est votre représentation 
+   en virgule fixe de la valeur donnée :
+   A fixed point number just means that there are a fixed number of digits after the decimal point. A floating point number allows for a varying number of digits after the decimal point.
+
+For example, if you have a way of storing numbers that requires exactly four digits after the decimal point, then it is fixed point. Without that restriction it is floating point.
+
+Often, when fixed point is used, the programmer actually uses an integer and then makes the assumption that some of the digits are beyond the decimal point. For example, I might want to keep two digits of precision, so a value of 100 means actually means 1.00, 101 means 1.01, 12345 means 123.45, etc.
+
+Floating point numbers are more general purpose because they can represent very small or very large numbers in the same way, but there is a small penalty in having to have extra storage for where the decimal place goes.

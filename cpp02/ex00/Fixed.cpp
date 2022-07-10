@@ -2,10 +2,9 @@
 #include "Fixed.hpp"
 #include <iostream>
 
-Fixed::Fixed(void) : _n(_n)
+Fixed::Fixed(void) : _n(0)
 {
 	std::cout << "Default constructor called" << std::endl;
-	this->_n = 0;
 	return ;
 }
 

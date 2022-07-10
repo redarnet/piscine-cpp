@@ -4,13 +4,13 @@
 #include <iostream>
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+ class FragTrap
 {
 
 	public:
 		FragTrap(void);
 		FragTrap(std::string _name);
-		~FragTrap(void);
+		virtual ~FragTrap(void);
 		FragTrap & operator=(FragTrap const & rhs);
 		void	attack(const std::string &target);
 		void	takeDamage(unsigned int amout);

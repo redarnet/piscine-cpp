@@ -8,6 +8,8 @@ int main()
 
 
 	Sa.attack("target");
+	Sa.takeDamage(4);
+	Sa.beRepaired(3);
 	Sa.guardGate();
 
 

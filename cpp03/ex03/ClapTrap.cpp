@@ -1,4 +1,6 @@
 
+
+
 #include "ClapTrap.hpp"
 #include <iostream>
 
@@ -8,7 +10,7 @@ ClapTrap::ClapTrap(void)
 	return ;
 }
 
-ClapTrap::ClapTrap(std::string _name) : _energy(10), _attack(0), _hit(10)
+ClapTrap::ClapTrap(std::string name) : _name(name), _hit(10), _energy(10), _attack(0)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	return ;
@@ -48,12 +50,12 @@ void	ClapTrap::takeDamage(unsigned int amount)
 {
 	this->_hit = this->_hit - amount;
 	std::cout << "ClapTrap " << this->_name << " take " << amount << " points of damage"<<std::endl;
+	std::cout << "ClapTrap has " << this->_hit << " hit point left" << std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
 	this->_hit = this->_hit + amount;
 	std::cout << "ClapTrap " << this->_name << " heal " << amount << " points of damage"<<std::endl;
+	std::cout << "ClapTrap has " << this->_hit << " hit point left" << std::endl;
 }
-
-

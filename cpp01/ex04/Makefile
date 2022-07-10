@@ -23,8 +23,10 @@ $(NAME): $(OBJ)
 
 clean:
 	rm -rf $(OBJ)
+	rm -rf $(OBJ_DIR)
 
 fclean:
+	rm -rf $(OBJ_DIR)
 	rm -rf $(OBJ)
 	rm -rf $(NAME)
 

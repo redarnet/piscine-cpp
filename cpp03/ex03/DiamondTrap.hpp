@@ -4,7 +4,7 @@
 #include <iostream>
 #include "ClapTrap.hpp"
 
-class DiamondTrap : public FragTrap
+class DiamondTrap : public ClapTrap
 {
 
 	public:

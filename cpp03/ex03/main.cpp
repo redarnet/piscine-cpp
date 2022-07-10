@@ -1,16 +1,16 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 #include <iostream>
 
 int main()
 {
-	FragTrap Sa("Sa");
+	DiamondTrap Sa("Sa");
 
 
 	Sa.attack("target");
 	Sa.highFiveGuys();
-
 
 	return 0;
 }

@@ -1,4 +1,3 @@
-
 #include "ScavTrap.hpp"
 #include "ClapTrap.hpp"
 #include <iostream>
@@ -53,12 +52,14 @@ void	ScavTrap::takeDamage(unsigned int amount)
 {
 	this->_hit = this->_hit - amount;
 	std::cout << "ScavTrap " << this->_name << " take " << amount << " points of damage"<<std::endl;
+	std::cout << "ScavTrap has " << this->_hit << " hit point left" << std::endl;
 }
 
 void	ScavTrap::beRepaired(unsigned int amount)
 {
 	this->_hit = this->_hit + amount;
 	std::cout << "ScavTrap " << this->_name << " heal " << amount << " points of damage"<<std::endl;
+	std::cout << "ScavTrap has " << this->_hit << " hit point left" << std::endl;
 }
 
 

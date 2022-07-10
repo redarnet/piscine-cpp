@@ -1,11 +1,11 @@
 
 #include "Fixed.hpp"
 #include <iostream>
+#include <cmath>
 
 Fixed::Fixed(void) : _n(0)
 {
 	std::cout << "Default constructor called" << std::endl;
-	this->_n = 0;
 	return ;
 }
 
@@ -19,14 +19,12 @@ Fixed::Fixed(const Fixed & src)
 Fixed::Fixed(int const n)
 {
 	std::cout << "Int constructor called" << std::endl;
-	this->_n = n;
+	this->_n = n << _b;
 }
 
-Fixed::Fixed(float const n)
+Fixed::Fixed(float const n) : _n(n * 256)
 {
 	std::cout << "Float constructor called" << std::endl;
-	this->_n = n;
-
 }
 
 
@@ -57,13 +55,13 @@ void Fixed::setRawBits(int const raw)
 
 float Fixed::toFloat(void) const
 {
-	return (float(this->_n));
+	return ((float)this->_n / 256);
 }
 
 
-float Fixed::toInt(void) const
+int Fixed::toInt(void) const
 {
-	return (int(this->_n));
+	return (this->_n >> _b);
 }
 
 std::ostream & operator<<(std::ostream & a, Fixed const & rhs)

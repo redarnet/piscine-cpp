@@ -1,30 +1,34 @@
 NAME = attack
 
 CC = c++
+SRC_DIR = .
+OBJ_DIR = obj
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
+
+OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:%.cpp=%.o))
 
 SRC =	main.cpp\
 		HumanA.cpp\
 		HumanB.cpp\
 		Weapon.cpp
 
-OBJS = $(SRC:.cpp=.o)
+$(OBJ_DIR)/%.o : $(SRC_DIR)/%.cpp
+	@mkdir -p $(OBJ_DIR)
+	c++ $(FLAGS) -c $< -o $@
 
 
-
-%.o:	%.c
-		$(CC) $(FLAGS) -c $< -o $@
-
-all:  $(NAME)
-
-$(NAME): $(OBJS)
-	 $(CC)  $(FLAGS) -o $@ $^
+$(NAME): $(OBJ)
+	c++  $(OBJ)  $(FLAGS) -o $@
 
 
 clean:
-	rm -rf $(OBJS)
+	rm -rf $(OBJ)
+	rm -rf $(OBJ_DIR)
+
 fclean:
-	rm -rf $(OBJS)
+	rm -rf $(OBJ_DIR)
+	rm -rf $(OBJ)
 	rm -rf $(NAME)
+
 re: fclean all
