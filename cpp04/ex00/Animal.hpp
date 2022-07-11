@@ -11,10 +11,14 @@ class Animal
 		Animal(std::string _type);
 		~Animal(void);
 		Animal & operator=(Animal const & rhs);
-		virtual void makeSound() ;
+		virtual void makeSound() const;
 		const std::string 	&getType() const;
+		int		getValue(void) const;
 	protected:
 		std::string _type;
+		std::string _name;
+	private :
+		int _n;
 };
 
 class Dog : public Animal
@@ -23,7 +27,10 @@ class Dog : public Animal
 		Dog(void);
 		Dog(std::string _type);
 		~Dog(void);
-		virtual void makeSound();
+		Dog & operator=(Dog const & rhs);
+		virtual void makeSound() const;
+	private :
+		int _n;
 };
 
 class Cat : public Animal
@@ -32,7 +39,10 @@ class Cat : public Animal
 		Cat(void);
 		Cat(std::string _type);
 		~Cat(void);
-		virtual void makeSound();
+		Cat & operator=(Cat const & rhs);
+		virtual void makeSound() const;
+	private :
+		int _n;
 };
 
 

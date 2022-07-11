@@ -1,7 +1,5 @@
 NAME = Animal
 
-NAME = ClapTrap
-
 CC = c++
 
 OBJ_DIR = obj

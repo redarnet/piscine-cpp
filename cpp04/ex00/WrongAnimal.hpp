@@ -11,10 +11,14 @@ class WrongAnimal
 		WrongAnimal(std::string _type);
 		~WrongAnimal(void);
 		WrongAnimal & operator=(WrongAnimal const & rhs);
-		virtual void makeSound();
+		virtual void makeSound() const;
 		const std::string 	&getType() const;
+		int		getValue(void) const;
 	protected:
 		std::string _type;
+		std::string _name;
+	private :
+		int _n;
 };
 
 class WrongDog : public WrongAnimal
@@ -23,7 +27,10 @@ class WrongDog : public WrongAnimal
 		WrongDog(void);
 		WrongDog(std::string _type);
 		~WrongDog(void);
-		virtual void makeSound();
+		WrongDog & operator=(WrongDog const & rhs);
+		virtual void makeSound() const;
+	private :
+		int _n;
 };
 
 class WrongCat : public WrongAnimal
@@ -32,7 +39,10 @@ class WrongCat : public WrongAnimal
 		WrongCat(void);
 		WrongCat(std::string _type);
 		~WrongCat(void);
-		virtual void makeSound();
+		WrongCat & operator=(WrongCat const & rhs);
+		virtual void makeSound() const;
+	private :
+		int _n;
 };
 
 

@@ -15,9 +15,9 @@ const std::string &AAnimal::getType() const
 	return this->_type;
 }
 
-const void	AAnimal::makeSound() const
+void	AAnimal::makeSound() const
 {
-	std::cout << " " << std::endl;
+	std::cout << "AAnimal SOund " << std::endl;
 }
 
 Dog::Dog(void)
@@ -28,10 +28,19 @@ Dog::Dog(void)
 	return ;
 }
 
-Dog::Dog(std::string _name)
+Dog::Dog(std::string name)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "Dog Copy constructor called" << std::endl;
+	this->_type = "Dog";
+	this->brain = new Brain();
+	_name = name;
 	return ;
+}
+
+Dog & Dog::operator=(Dog const & )
+{
+	std::cout << "Dog Copy assignment operator called" << std::endl;
+	return *this;
 }
 
 Dog::~Dog(void)
@@ -41,7 +50,7 @@ Dog::~Dog(void)
 	return ;
 }
 
-const void	Dog::makeSound() const
+void	Dog::makeSound() const
 {
 	std::cout << "Wouf" << std::endl;
 }
@@ -55,10 +64,18 @@ Cat::Cat(void)
 	return ;
 }
 
-Cat::Cat(std::string _name)
+Cat::Cat(std::string name)
 {
 	std::cout << "Copy constructor called" << std::endl;
+	this->_type = "Cat";
+	this->brain = new Brain();
+	_name = name;
 	return ;
+}
+Cat & Cat::operator=(Cat const & )
+{
+	std::cout << "Cat Copy assignment operator called" << std::endl;
+	return *this;
 }
 
 Cat::~Cat(void)
@@ -68,7 +85,7 @@ Cat::~Cat(void)
 	return ;
 }
 
-const void	Cat::makeSound() const
+void	Cat::makeSound() const
 {
 	std::cout << "Miaow" << std::endl;
 }

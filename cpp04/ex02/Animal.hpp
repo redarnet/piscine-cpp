@@ -8,9 +8,11 @@ class AAnimal
 {
 	public:
 		virtual ~AAnimal(void);
-		const virtual void makeSound() const = 0;
+		virtual void makeSound() const = 0;
 		const std::string 	&getType() const;
+	protected :
 		std::string _type;
+		std::string _name;
 };
 
 class Dog : public AAnimal
@@ -19,7 +21,8 @@ class Dog : public AAnimal
 		Dog(void);
 		Dog(std::string _type);
 		virtual ~Dog(void);
-		const virtual void makeSound() const ;
+		Dog & operator=(Dog const & rhs);
+		virtual void makeSound() const ;
 	private:
 		Brain *brain;
 };
@@ -30,7 +33,8 @@ class Cat : public AAnimal
 		Cat(void);
 		Cat(std::string _type);
 		virtual ~Cat(void);
-		const virtual void makeSound() const;
+		Cat & operator=(Cat const & rhs);
+		virtual void makeSound() const;
 	private:
 		Brain *brain;
 };

@@ -4,25 +4,32 @@
 
 Brain::Brain(void)
 {
-	std::cout << "Default constructor Brain called" << std::endl;
+	std::cout << "Brain Default constructor Brain called" << std::endl;
 	return ;
 }
 
-Brain::Brain(const Brain &src)
+Brain::Brain(std:: string name)
 {
-	std::cout << "Copy constructor Brain called" << std::endl;
+	std::cout << "Brain Copy constructor Brain called" << std::endl;
+	_name = name;
 	return ;
 }
 
 Brain::~Brain(void)
 {
-	std::cout << "Default Destructor Brain called" << std::endl;
+	std::cout << "Brain Default Destructor Brain called" << std::endl;
 	return ;
+}
+
+int		Brain::getValue(void) const
+{
+	return this->_n;
 }
 
 Brain & Brain::operator=(Brain const & rhs)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "Brain Copy assignment operator called" << std::endl;
+	this->_n = rhs.getValue();
 	return *this;
 }
 

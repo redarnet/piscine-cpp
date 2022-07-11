@@ -1,28 +1,35 @@
-
 #include "Animal.hpp"
 #include <iostream>
 
 Animal::Animal(void)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "Animal Default constructor called" << std::endl;
+	this->_type = "Animal";
 	return ;
 }
 
-Animal::Animal(std::string _name)
+Animal::Animal(std::string name)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "Animal Copy constructor called" << std::endl;
+	_name = name;
 	return ;
 }
 
 Animal::~Animal(void)
 {
-	std::cout << "Destructor Animal called" << std::endl;
+	std::cout << "Animal  Destructor called" << std::endl;
 	return ;
+}
+
+int		Animal::getValue(void) const
+{
+	return this->_n;
 }
 
 Animal & Animal::operator=(Animal const & rhs)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "Animal Copy assignment operator called" << std::endl;
+	this->_n = rhs.getValue();
 	return *this;
 }
 
@@ -32,33 +39,43 @@ const std::string &Animal::getType() const
 	return this->_type;
 }
 
-const void	Animal::makeSound() const
+void	Animal::makeSound() const
 {
-	std::cout << " " << std::endl;
+	std::cout << "Animal Sound" << std::endl;
 }
 
 Dog::Dog(void)
 {
-	std::cout << "Constructor Dog called" << std::endl;
 	this->_type = "Dog";
 	this->brain = new Brain();
+	std::cout <<"Dog constuctor called" << std::endl;
 	return ;
 }
 
-Dog::Dog(std::string _name)
+Dog::Dog(std::string name)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "Dog Copy constructor called" << std::endl;
+	this->brain = new Brain();
+	this->_type = "Dog";
+	_name = name;
 	return ;
+}
+
+Dog & Dog::operator=(Dog const & rhs)
+{
+	std::cout << "Dog Copy assignment operator called" << std::endl;
+	this->_n = rhs.getValue();
+	return *this;
 }
 
 Dog::~Dog(void)
 {
-	delete this->brain;
-	std::cout << "Destructor Dog called" << std::endl;
+	std::cout << "Dog Destructor called" << std::endl;
+	delete brain;
 	return ;
 }
 
-const void	Dog::makeSound() const
+ void	Dog::makeSound() const
 {
 	std::cout << "Wouf" << std::endl;
 }
@@ -66,27 +83,36 @@ const void	Dog::makeSound() const
 
 Cat::Cat(void)
 {
-	std::cout << "Constructor Cat called" << std::endl;
 	this->_type = "Cat";
 	this->brain = new Brain();
+	std::cout <<  "Cat constuctor called" << std::endl;
 	return ;
 }
 
-Cat::Cat(std::string _name)
+Cat::Cat(std::string name)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "Cat Copy constructor called" << std::endl;
+	this->_type = "Cat";
+	this->brain = new Brain();
+	_name = name;
 	return ;
+}
+
+Cat & Cat::operator=(Cat const & rhs)
+{
+	std::cout << "Cat Copy assignment operator called" << std::endl;
+	this->_n = rhs.getValue();
+	return *this;
 }
 
 Cat::~Cat(void)
 {
+	std::cout << "Cat Destructor called" << std::endl;
 	delete brain;
-	std::cout << "Destructor Cat called" << std::endl;
 	return ;
 }
 
-const void	Cat::makeSound() const
+void	Cat::makeSound() const
 {
 	std::cout << "Miaow" << std::endl;
 }
-
