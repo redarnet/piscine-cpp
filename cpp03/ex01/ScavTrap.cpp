@@ -39,14 +39,16 @@ int		ScavTrap::getValue(void) const
 
 void	ScavTrap::attack(const std::string &target)
 {
-	if (this->_energy > 1)
+	if (this->_energy > 1 && this->_hit > 0)
 	{
 		this->_energy--;
 		std::cout << "ScavTrap " << this->_name << " attacks "  << target << " causing " << this->_attack
 			<< " points of damage "<< std::endl;
 	}
-	else
+	else if (this->_energy <= 0)
 		std::cout << "ScavTrap " << this->_name << "has no energy" << std::endl;
+	else
+		std::cout << "ScravTrap " << this->_name << "has no point left" << std::endl;
 }
 
 void	ScavTrap::takeDamage(unsigned int amount)
@@ -58,9 +60,16 @@ void	ScavTrap::takeDamage(unsigned int amount)
 
 void	ScavTrap::beRepaired(unsigned int amount)
 {
-	this->_hit = this->_hit + amount;
-	std::cout << "ScavTrap " << this->_name << " heal " << amount << " points of damage"<<std::endl;
-	std::cout << "ScavTrap has " << this->_hit << " hit point left" << std::endl;
+	if (this->_energy > 0 && this->_hit > 0 )
+	{
+		this->_hit = this->_hit + amount;
+		std::cout << "ScavTrap " << this->_name << " heal " << amount << " points of damage"<<std::endl;
+		std::cout << "ScavTrap has " << this->_hit << " hit point left" << std::endl;
+	}
+	else if (this->_energy <= 0)
+		std::cout << "ScavTrap " << this->_name << "has no energy" << std::endl;
+	else
+		std::cout << "ScravTrap " << this->_name << "has no point left" << std::endl;
 }
 
 

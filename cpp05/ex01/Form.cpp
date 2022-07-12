@@ -26,6 +26,7 @@ Form::~Form(void)
 Form & Form::operator=(Form const & rhs)
 {
 		std::cout << "Copy assignment operator called" << std::endl;
+		this->_name = rhs._name;
 		return *this;
 }
 

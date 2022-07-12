@@ -1,4 +1,4 @@
-NAME = Form
+NAME = meta
 
 CC = c++
 
@@ -11,8 +11,8 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:%.cpp=%.o))
 
 SRC =	main.cpp\
-		Bureaucrat.cpp \
-		Form.cpp
+		AMateria.cpp \
+		ICharacter.cpp
 
 .PHONY: all
 all:  $(NAME)
@@ -38,5 +38,3 @@ fclean:
 
 .PHONY: re
 re: fclean all
-
-

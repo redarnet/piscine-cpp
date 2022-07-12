@@ -12,15 +12,8 @@ Bureaucrat::Bureaucrat(std::string _name, int _echelon)
         std::cout << "Copy constructor Bureaucrat called" << std::endl;
 		this->_name = _name;
 		this->_echelon = _echelon;
-		try
-		{
-			GradeToHightException();
-			GradeToLowException();
-		}
-		catch (std::exception & e)
-		{
-			std::cout << "error" << std::endl;
-		}
+		GradeToHightException();
+		GradeToLowException();
         return ;
 }
 
@@ -33,6 +26,8 @@ Bureaucrat::~Bureaucrat(void)
 Bureaucrat & Bureaucrat::operator=(Bureaucrat const & rhs)
 {
         std::cout << "Copy assignment operator called" << std::endl;
+		this->_echelon =  rhs._echelon;
+		this->_name = rhs._name;
         return *this;
 }
 
@@ -74,17 +69,10 @@ void	Bureaucrat::GradeToHightException()
 	{
 		throw std::exception();
 	}
-	else
-	{
-
-	}
 }
 
 void	Bureaucrat::GradeToLowException()
 {
 	if ( this->_echelon > 150)
 		throw std::exception();
-	else
-	{
-	}
 }

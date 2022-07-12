@@ -1,9 +1,10 @@
 #include "Bureaucrat.hpp"
+#include <iostream>
 
-Bureaucrat::Bureaucrat(void) : _name(_name)
+Bureaucrat::Bureaucrat(void)
 {
-		std::cout << "Default constructor Bureaucrat called" << std::endl;
-		return ;
+        std::cout << "Default constructor Bureaucrat called" << std::endl;
+        return ;
 }
 
 Bureaucrat::Bureaucrat(std::string _name, int _echelon)
@@ -13,19 +14,21 @@ Bureaucrat::Bureaucrat(std::string _name, int _echelon)
 		this->_echelon = _echelon;
 		GradeToHightException();
 		GradeToLowException();
-		return ;
+        return ;
 }
 
 Bureaucrat::~Bureaucrat(void)
 {
-		std::cout << "Default Destructor Bureaucrat called" << std::endl;
-		return ;
+        std::cout << "Default Destructor Bureaucrat called" << std::endl;
+        return ;
 }
 
 Bureaucrat & Bureaucrat::operator=(Bureaucrat const & rhs)
 {
-		std::cout << "Copy assignment operator called" << std::endl;
-		return *this;
+        std::cout << "Copy assignment operator called" << std::endl;
+		this->_echelon =  rhs._echelon;
+		this->_name = rhs._name;
+        return *this;
 }
 
 
@@ -66,34 +69,19 @@ void	Bureaucrat::GradeToHightException()
 	{
 		throw std::exception();
 	}
-	else
-	{
-
-	}
 }
 
 void	Bureaucrat::GradeToLowException()
 {
 	if ( this->_echelon > 150)
 		throw std::exception();
-	else
-	{
-	}
 }
 
-
-
-
-
-void	Bureaucrat::SignForm(Form &Papier)
+void	Bureaucrat::SignForm(Form  &Papier)
 {
 	if (Papier.getBo() == true)
-		std::cout << this->_name << " signed " << Papier << std::endl;
+		std::cout << this->_name << "signed" << Papier << std::endl;
 	else
-		std::cout << this->_name << " couldn t signed " << Papier << std::endl;
+		std::cout << this->_name << "didn't signed" << Papier << std::endl;
 
 }
-
-
-
-

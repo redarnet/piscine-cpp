@@ -15,6 +15,7 @@ class ClapTrap
 		void	takeDamage(unsigned int amout);
 		void	beRepaired(unsigned int amout);
 		int		getValue(void) const;
+	protected :
 		std::string _name;
 		int	_hit;
 		int	_energy;
