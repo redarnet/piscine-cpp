@@ -8,17 +8,12 @@ class Brain
 
 	public:
 		Brain(void);
-		Brain(std::string name);
+		Brain(Brain const & src);
 		~Brain(void);
 		Brain & operator=(Brain const & rhs);
 		const std::string 	&getType() const;
-		int	getValue(void) const;
 		std::string ideas[100];
 	private:
 		std::string _type;
-	private :
-		int _n;
-		std::string _name;
-
 };
 #endif

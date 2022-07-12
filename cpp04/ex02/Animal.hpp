@@ -12,14 +12,13 @@ class AAnimal
 		const std::string 	&getType() const;
 	protected :
 		std::string _type;
-		std::string _name;
 };
 
 class Dog : public AAnimal
 {
 	public :
 		Dog(void);
-		Dog(std::string _type);
+		Dog(Dog const & src);
 		virtual ~Dog(void);
 		Dog & operator=(Dog const & rhs);
 		virtual void makeSound() const ;
@@ -31,7 +30,7 @@ class Cat : public AAnimal
 {
 	public :
 		Cat(void);
-		Cat(std::string _type);
+		Cat(Cat const & src);
 		virtual ~Cat(void);
 		Cat & operator=(Cat const & rhs);
 		virtual void makeSound() const;

@@ -8,10 +8,10 @@ Brain::Brain(void)
 	return ;
 }
 
-Brain::Brain(std:: string name)
+Brain::Brain(const Brain & src)
 {
 	std::cout << "Brain Copy constructor Brain called" << std::endl;
-	_name = name;
+	*this = src;
 	return ;
 }
 
@@ -21,15 +21,10 @@ Brain::~Brain(void)
 	return ;
 }
 
-int		Brain::getValue(void) const
-{
-	return this->_n;
-}
-
 Brain & Brain::operator=(Brain const & rhs)
 {
 	std::cout << "Brain Copy assignment operator called" << std::endl;
-	this->_n = rhs.getValue();
+	this->_type = rhs._type;
 	return *this;
 }
 

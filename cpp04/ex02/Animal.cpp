@@ -28,18 +28,19 @@ Dog::Dog(void)
 	return ;
 }
 
-Dog::Dog(std::string name)
+Dog::Dog(Dog const & src)
 {
 	std::cout << "Dog Copy constructor called" << std::endl;
 	this->_type = "Dog";
 	this->brain = new Brain();
-	_name = name;
+	*this = src;
 	return ;
 }
 
-Dog & Dog::operator=(Dog const & )
+Dog & Dog::operator=(Dog const & rhs)
 {
 	std::cout << "Dog Copy assignment operator called" << std::endl;
+	this->_type = rhs._type;
 	return *this;
 }
 
@@ -64,17 +65,18 @@ Cat::Cat(void)
 	return ;
 }
 
-Cat::Cat(std::string name)
+Cat::Cat(Cat const & src)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	this->_type = "Cat";
 	this->brain = new Brain();
-	_name = name;
+	*this = src;
 	return ;
 }
-Cat & Cat::operator=(Cat const & )
+Cat & Cat::operator=(Cat const & rhs)
 {
 	std::cout << "Cat Copy assignment operator called" << std::endl;
+	this->_type = rhs._type;
 	return *this;
 }
 

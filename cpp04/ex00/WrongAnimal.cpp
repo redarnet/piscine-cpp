@@ -9,11 +9,11 @@ WrongAnimal::WrongAnimal(void)
 	return ;
 }
 
-WrongAnimal::WrongAnimal(std::string name)
+WrongAnimal::WrongAnimal(const WrongAnimal & src)
 {
 	std::cout << "Wrong Animal Copy constructor called" << std::endl;
 	this->_type = "WrongAnimal";
-	_name = name;
+	*this = src;
 	return ;
 }
 
@@ -23,15 +23,10 @@ WrongAnimal::~WrongAnimal(void)
 	return ;
 }
 
-int		WrongAnimal::getValue(void) const
-{
-	return this->_n;
-}
-
 WrongAnimal & WrongAnimal::operator=(WrongAnimal const & rhs)
 {
 	std::cout << "Wrong Animal Copy assignment operator called" << std::endl;
-	this->_n = rhs.getValue();
+	this->_type = rhs._type;
 	return *this;
 }
 
@@ -53,11 +48,11 @@ WrongDog::WrongDog(void)
 	return ;
 }
 
-WrongDog::WrongDog(std::string name)
+WrongDog::WrongDog(const WrongDog & src)
 {
 	std::cout << "WrongDog Copy constructor called" << std::endl;
 	this->_type = "WrongDog";
-	_name = name;
+	*this = src;
 	return ;
 }
 
@@ -70,7 +65,7 @@ WrongDog::~WrongDog(void)
 WrongDog & WrongDog::operator=(WrongDog const & rhs)
 {
 	std::cout << "Wrong Dog Copy assignment operator called" << std::endl;
-	this->_n = rhs.getValue();
+	this->_type = rhs._type;
 	return *this;
 }
 
@@ -87,11 +82,11 @@ WrongCat::WrongCat(void)
 	return ;
 }
 
-WrongCat::WrongCat(std::string name)
+WrongCat::WrongCat(const WrongCat & src)
 {
 	std::cout << "WrongCat Copy constructor called" << std::endl;
 	this->_type = "WrongCat";
-	_name = name;
+	*this = src;
 	return ;
 }
 
@@ -104,7 +99,7 @@ WrongCat::~WrongCat(void)
 WrongCat & WrongCat::operator=(WrongCat const & rhs)
 {
 	std::cout << "Wrong Dog Copy assignment operator called" << std::endl;
-	this->_n = rhs.getValue();
+	this->_type = rhs._type;
 	return *this;
 }
 
