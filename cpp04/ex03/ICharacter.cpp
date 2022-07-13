@@ -1,8 +1,12 @@
 #include "ICharacter.hpp"
 
 
-
 Character::Character()
+{
+
+}
+
+Character::Character(std::string name) : _name(name)
 {
 
 }
@@ -25,4 +29,9 @@ virtual void unequip::Character(int idx)
 virtual void use::Character(int idx, ICharacter & target)
 {
 
+}
+
+std::string const &	getName() const;
+{
+	return _name;
 }

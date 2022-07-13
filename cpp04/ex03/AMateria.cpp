@@ -1,4 +1,5 @@
 #include "AMateria.hpp"
+#include "ICharacter.hpp"
 #include <iostream>
 
 AMateria::AMateria(std::string const & type)
@@ -44,7 +45,7 @@ Ice::~Ice(void)
 AMateria * Ice::clone() const
 {
 	// this->_type = clone._type;
-	return  * this;
+	return (*this);
 }
 
 Cure::Cure(void)
@@ -62,7 +63,7 @@ Cure::~Cure(void)
  void 	Cure::use(ICharacter & target)
  {
  	// std::cout << "* helas " << target << "'s wounds *" << std::endl;
-	(void)target;
+	target.getName();
  }
 
 // virtual AMateria Cure::clone(Cure const & clone) const

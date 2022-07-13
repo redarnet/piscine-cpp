@@ -19,12 +19,16 @@ class Character : public ICharacter
 {
 	public :
 	Character(void);
+	Character(std::string name);
 	~Character(void);
 	virtual void equip(AMateria *m);
 	virtual void unequip(int idx);
 	virtual void use(int idx, ICharacter& target);
+	virtual std::string const & getName() const;
 	private :
-		AMateria inventaire[4];
+		std::string _name;
+	//	AMateria inventaire[4];
 };
 
 
+#endif
