@@ -17,12 +17,28 @@ class Bureaucrat
 				void	decre_eche(void);
 				int		getGrade(void) const;
 				std::string getName(void) const;
-				void	GradeToHightException();
-				void	GradeToLowException();
 
+
+	class GradeTooHighException : public std::exception
+	{
+		public:
+		virtual const char* what() const throw()
+		{
+			return "Exception : grade is too High\n";
+		}
+	};
+	class GradeTooLowException : public std::exception
+	{
+		public:
+		virtual const char* what() const throw()
+		{
+			return "Exception : grade is too Low\n";
+		}
+	};
         private:
                 std::string _name;
 				int _echelon;
+
 
 };
 

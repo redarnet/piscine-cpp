@@ -16,7 +16,7 @@ PresidentialPardonForm::PresidentialPardonForm(const std::string _target) : _bo(
 		return ;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const & src)
+PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const & src) : AForm(src)
 {
 	std::cout << "Copy constructor PresidentialPardonForm called" << std::endl;
 	*this = src;

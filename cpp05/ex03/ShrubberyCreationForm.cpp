@@ -39,7 +39,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const std::string _target) : _bo(0)
 		return ;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const & src)
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const & src) : AForm(src)
 {
 		std::cout << "Copy constructor ShrubberyCreationForm called" << std::endl;
 		*this = src;

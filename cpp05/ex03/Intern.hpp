@@ -15,12 +15,12 @@ class Intern
 				~Intern(void);
 				Intern & operator=(Intern const & r);
 				AForm *makeForm(std::string Robot, std::string Target);
-				AForm *presi();
-				AForm *robot();
-				AForm *shrubbery();
+				AForm *presi(std::string Target);
+				AForm *robot(std::string Target);
+				AForm *shrubbery(std::string Target);
 		private :
 			std::string _tab [3];
-		AForm *(Intern::*monform[3])(void);
+		AForm *(Intern::*monform[3])(std::string Target);
 };
 
 #endif

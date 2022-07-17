@@ -23,7 +23,7 @@ RobotomyRequestForm::RobotomyRequestForm(void)
 		return ;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const & src)
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const & src) : AForm(src)
 {
 		std::cout << "Copy constructor RobotomyRequestForm called" << std::endl;
 		*this = src;

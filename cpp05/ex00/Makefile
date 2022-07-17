@@ -6,7 +6,7 @@ OBJ_DIR = obj
 
 SRC_DIR = .
 
-FLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -fPIE -Wall -Wextra -Werror -std=c++98
 
 OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:%.cpp=%.o))
 

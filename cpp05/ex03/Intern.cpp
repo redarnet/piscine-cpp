@@ -2,6 +2,7 @@
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include <iostream>
 
 Intern::Intern(void)
 {
@@ -30,25 +31,20 @@ Intern & Intern::operator=(Intern const & )
 		return *this;
 }
 
-AForm	*Intern::robot()
+AForm	*Intern::robot(std::string Target)
 {
-	AForm *robot = new RobotomyRequestForm;
-
-	return robot;
+	return (new RobotomyRequestForm(Target));
 }
 
-AForm	*Intern::presi()
+AForm	*Intern::presi(std::string Target)
 {
-	AForm *presi = new PresidentialPardonForm;
+	return (new PresidentialPardonForm(Target));
 
-	return presi;
 }
 
-AForm	*Intern::shrubbery()
+AForm	*Intern::shrubbery(std::string Target)
 {
-	AForm *shrubbery = new ShrubberyCreationForm;
-
-	return shrubbery;
+	return ( new ShrubberyCreationForm(Target));
 }
 
 AForm	*Intern::makeForm(std::string PO, std::string Target)
@@ -60,7 +56,6 @@ AForm	*Intern::makeForm(std::string PO, std::string Target)
 	monform[1] = &Intern::presi;
 	monform[2] = &Intern::shrubbery;
 
-	res = (this->*monform[i]());
 	_tab[0] = "robotomy request";
 	_tab[1] = "presidential pardon";
 	_tab[2] = "shrubbery creation";
@@ -70,6 +65,9 @@ AForm	*Intern::makeForm(std::string PO, std::string Target)
 			break;
 		i++;
 	}
+	if (i >= 3)
+		return NULL;
+	res = (this->*(monform[i]))(Target);
 	std::cout << Target << std::endl;
 	// Robot->changeName(PO);
 	return res;
