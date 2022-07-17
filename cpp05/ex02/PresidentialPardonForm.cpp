@@ -8,14 +8,19 @@ PresidentialPardonForm::PresidentialPardonForm(void)
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string _target) : _bo(0)
 {
-        std::cout << "Copy constructor PresidentialPardonForm called" << std::endl;
+        std::cout << "constructor PresidentialPardonForm called" << std::endl;
 		std::cout << _target << " has been forgiven by Zaphod Beeblerox" << std::endl;
 		this->_name = "Presi";
 		this->_echelon1 = 25;
 		this->_echelon2 = 5;
-			GradeToHightException();
-			GradeToLowException();
 		return ;
+}
+
+PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const & src)
+{
+	std::cout << "Copy constructor PresidentialPardonForm called" << std::endl;
+	*this = src;
+	return;
 }
 
 PresidentialPardonForm::~PresidentialPardonForm(void)
@@ -27,6 +32,10 @@ PresidentialPardonForm::~PresidentialPardonForm(void)
 PresidentialPardonForm & PresidentialPardonForm::operator=(PresidentialPardonForm const & rhs)
 {
 		std::cout << "Copy assignment operator called" << std::endl;
+		this->_name = rhs._name;
+		this->_bo = rhs._bo;
+		this->_echelon1 = rhs._echelon1;
+		this->_echelon2 = rhs._echelon2;
 		return *this;
 }
 
@@ -66,27 +75,6 @@ std::ostream & operator<<(std::ostream & o, PresidentialPardonForm const & rhs)
 	return o;
 }
 
-void	PresidentialPardonForm::GradeToHightException()
-{
-	if ( this->_echelon1 < 1 || this->_echelon2 < 1)
-	{
-		throw std::exception();
-	}
-	else
-	{
-
-	}
-}
-
-void	PresidentialPardonForm::GradeToLowException()
-{
-	if ( this->_echelon1 > 150 || this->_echelon2 > 150)
-		throw std::exception();
-	else
-	{
-	}
-}
-
 
 void	PresidentialPardonForm::beSigned(Bureaucrat &Maxime)
 {
@@ -94,8 +82,7 @@ void	PresidentialPardonForm::beSigned(Bureaucrat &Maxime)
 	{
 		this->_bo = true;
 	}
-
-
-
+	else
+		throw std::exception();
 }
 

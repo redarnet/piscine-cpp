@@ -11,6 +11,7 @@ class AForm
 		public:
 				AForm(void);
 				AForm(const std::string _name, const int _echelon1, const int _echelon2);
+				AForm(AForm const & src);
 				virtual ~AForm(void);
 				AForm & operator=(AForm const & rhs);
 				const std::string &getType() const;
@@ -21,8 +22,8 @@ class AForm
 				void	GradeToHightException();
 				void	GradeToLowException();
 				virtual void	beSigned(Bureaucrat &Maxime);
+				virtual std::string  & changeName(std::string Name);
 				void execute(Bureaucrat const & executor);
-				virtual std::string &changeName(std::string Name);
 
 		private:
 				std::string _name;

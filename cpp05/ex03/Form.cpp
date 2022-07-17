@@ -12,11 +12,17 @@ AForm::AForm(const std::string _name, const int _echelon1, const int _echelon2) 
 		this->_name = _name;
 		this->_echelon1 = _echelon1;
 		this->_echelon2 = _echelon2;
-			GradeToHightException();
-			GradeToLowException();
+		GradeToHightException();
+		GradeToLowException();
 		return ;
 }
 
+AForm::AForm(AForm const & src)
+{
+	std::cout << "copy constructor AForm called" << std::endl;
+	*this = src;
+	return ;
+}
 AForm::~AForm(void)
 {
 		std::cout << "Default Destructor Form called" << std::endl;
@@ -26,6 +32,10 @@ AForm::~AForm(void)
 AForm & AForm::operator=(AForm const & rhs)
 {
 		std::cout << "Copy assignment operator called" << std::endl;
+		this->_name = rhs._name;
+		this->_bo = rhs._bo;
+		this->_echelon1 = rhs._echelon1;
+		this->_echelon2 = rhs._echelon2;
 		return *this;
 }
 
@@ -45,7 +55,6 @@ std::string AForm::getName() const
 {
 	return this->_name;
 }
-
 
 std::string &AForm::changeName(std::string Name)
 {
@@ -100,6 +109,8 @@ void	AForm::beSigned(Bureaucrat &Maxime)
 	{
 		this->_bo = true;
 	}
+	else
+		throw std::exception();
 
 }
 

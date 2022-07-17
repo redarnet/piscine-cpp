@@ -11,6 +11,7 @@ class AForm
 		public:
 				AForm(void);
 				AForm(const std::string _name, const int _echelon1, const int _echelon2);
+				AForm(AForm const & src);
 				virtual ~AForm(void);
 				AForm & operator=(AForm const & rhs);
 				const std::string &getType() const;

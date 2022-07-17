@@ -2,7 +2,13 @@ NAME = Form
 
 CC = c++
 
+OBJ_DIR = obj
+
+SRC_DIR = .
+
 FLAGS = -Wall -Wextra -Werror -std=c++98
+
+OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:%.cpp=%.o))
 
 SRC =	main.cpp\
 		Bureaucrat.cpp \
@@ -11,22 +17,30 @@ SRC =	main.cpp\
 		RobotomyRequestForm.cpp \
 		PresidentialPardonForm.cpp
 
-OBJS = $(SRC:.cpp=.o)
-
-
-
-%.o:	%.c
-		$(CC) $(FLAGS) -c $< -o $@
-
+.PHONY: all
 all:  $(NAME)
 
-$(NAME): $(OBJS)
-	 $(CC)  $(FLAGS) -o $@ $^
+$(OBJ_DIR)/%.o : $(SRC_DIR)/%.cpp
+	@mkdir -p $(OBJ_DIR)
+	c++ $(FLAGS) -c $< -o $@
 
 
+$(NAME): $(OBJ)
+	c++  $(OBJ)  $(FLAGS) -o $@
+
+.PHONY: clean
 clean:
-	rm -rf $(OBJS)
+	rm -rf $(OBJ_DIR)
+	rm -rf $(OBJ)
+
+.PHONY: fclean
 fclean:
-	rm -rf $(OBJS)
+	rm -rf $(OBJ_DIR)
+	rm -rf $(OBJ)
 	rm -rf $(NAME)
+
+.PHONY: re
 re: fclean all
+
+
+

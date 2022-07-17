@@ -9,15 +9,11 @@
 
 int main()
 {
-	try
 	{
 		Intern someRandomIntern;
 		AForm* rrf;
+
 		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
-	}
-	catch(std::exception & e)
-	{
-		std::cout << "error" << std::endl;
 	}
 
 

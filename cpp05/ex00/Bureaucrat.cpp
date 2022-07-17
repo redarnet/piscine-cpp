@@ -9,11 +9,18 @@ Bureaucrat::Bureaucrat(void)
 
 Bureaucrat::Bureaucrat(std::string _name, int _echelon)
 {
-        std::cout << "Copy constructor Bureaucrat called" << std::endl;
+        std::cout << " constructor Bureaucrat called" << std::endl;
 		this->_name = _name;
 		this->_echelon = _echelon;
 		GradeToHightException();
 		GradeToLowException();
+        return ;
+}
+
+Bureaucrat::Bureaucrat(Bureaucrat const  & src)
+{
+        std::cout << "copy constructor Bureaucrat called" << std::endl;
+		*this = src;
         return ;
 }
 

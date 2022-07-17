@@ -9,9 +9,10 @@ class Bureaucrat
         public:
                 Bureaucrat(void);
                 Bureaucrat(std::string _name, int _echelon);
+				Bureaucrat(Bureaucrat const & src);
                 ~Bureaucrat(void);
                 Bureaucrat & operator=(Bureaucrat const & rhs);
-                const std::string       &getType() const;
+                const std::string	&getType() const;
 				void	incre_eche(void);
 				void	decre_eche(void);
 				int		getGrade(void) const;

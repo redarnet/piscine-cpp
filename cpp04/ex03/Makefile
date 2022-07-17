@@ -12,7 +12,8 @@ OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:%.cpp=%.o))
 
 SRC =	main.cpp\
 		AMateria.cpp \
-		ICharacter.cpp
+		ICharacter.cpp \
+		IMateriaSource.cpp
 
 .PHONY: all
 all:  $(NAME)

@@ -9,6 +9,7 @@ class PresidentialPardonForm : public AForm
 		public:
 				PresidentialPardonForm(void);
 				PresidentialPardonForm(const std::string _target);
+				PresidentialPardonForm(PresidentialPardonForm const & src);
 				~PresidentialPardonForm(void);
 				PresidentialPardonForm & operator=(PresidentialPardonForm const & rhs);
 				const std::string &getType() const;
@@ -16,8 +17,6 @@ class PresidentialPardonForm : public AForm
 				int		getGrade2(void) const;
 				std::string getName(void) const;
 				bool	getBo(void) const;
-				void	GradeToHightException();
-				void	GradeToLowException();
 				void	beSigned(Bureaucrat &Maxime);
 
 		private:

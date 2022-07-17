@@ -1,6 +1,6 @@
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(void) : _name(_name)
+Bureaucrat::Bureaucrat(void)
 {
 		std::cout << "Default constructor Bureaucrat called" << std::endl;
 		return ;
@@ -8,12 +8,19 @@ Bureaucrat::Bureaucrat(void) : _name(_name)
 
 Bureaucrat::Bureaucrat(std::string _name, int _echelon)
 {
-        std::cout << "Copy constructor Bureaucrat called" << std::endl;
+        std::cout << "constructor Bureaucrat called" << std::endl;
 		this->_name = _name;
 		this->_echelon = _echelon;
 		GradeToHightException();
 		GradeToLowException();
 		return ;
+}
+
+Bureaucrat::Bureaucrat(Bureaucrat const  & src)
+{
+        std::cout << "copy constructor Bureaucrat called" << std::endl;
+		*this = src;
+        return ;
 }
 
 Bureaucrat::~Bureaucrat(void)
@@ -25,6 +32,8 @@ Bureaucrat::~Bureaucrat(void)
 Bureaucrat & Bureaucrat::operator=(Bureaucrat const & rhs)
 {
 		std::cout << "Copy assignment operator called" << std::endl;
+		this->_echelon =  rhs._echelon;
+		this->_name = rhs._name;
 		return *this;
 }
 

@@ -8,11 +8,12 @@
 
 int main()
 {
-	/*
+
+	{
 	try
 	{
 		ShrubberyCreationForm Arbu("Abre");
-		Bureaucrat Maxime("Maxime", 140);
+		Bureaucrat Maxime("Maxime", 1);
 
 		std::cout << Arbu << std::endl;
 		Arbu.beSigned(Maxime);
@@ -24,8 +25,11 @@ int main()
 	{
 		std::cout << "error" << std::endl;
 	}
-	*/
-	/*
+	}
+
+	std::cout << " - - - - - -" << std::endl;
+
+	{
 	try
 	{
 		RobotomyRequestForm Robot("Rd23");
@@ -41,11 +45,15 @@ int main()
 	{
 		std::cout << "error" << std::endl;
 	}
-	*/
+	}
+
+	std::cout << " - - - - - -" << std::endl;
+
+	{
 	try
 	{
 		PresidentialPardonForm Presi("Sorry");
-		Bureaucrat Maxime("Maxime", 20);
+		Bureaucrat Maxime("Maxime", 24);
 
 		std::cout << Presi << std::endl;
 		Presi.beSigned(Maxime);
@@ -57,8 +65,50 @@ int main()
 	{
 		std::cout << "error" << std::endl;
 	}
+	}
 
+/*
+	//  Copy constructeur et copy assigment opertor
+	std::cout << " - - - - - -" << std::endl;
+	{
+	try
+	{
+		PresidentialPardonForm Pres("Sorry");
+		PresidentialPardonForm Cpy(Pres);
+		Bureaucrat Max("Max", 4);
 
+		std::cout << Cpy << std::endl;
+		Pres.beSigned(Max);
+		std::cout << Cpy << std::endl;
+		Pres.execute(Max);
+		Max.executeForm(Cpy);
+	}
+	catch(std::exception & e)
+	{
+		std::cout << "error" << std::endl;
+	}
+	}
+	std::cout << " - - - - - -" << std::endl;
+	{
+	try
+	{
+		PresidentialPardonForm Pres("Sorry");
+		PresidentialPardonForm Cpy;
+		Bureaucrat Max("Max", 4);
+
+		Cpy = Pres;
+		std::cout << Cpy << std::endl;
+		Pres.beSigned(Max);
+		std::cout << Cpy << std::endl;
+		Pres.execute(Max);
+		Max.executeForm(Cpy);
+	}
+	catch(std::exception & e)
+	{
+		std::cout << "error" << std::endl;
+	}
+	}
+	*/
 
 
 	return 0;

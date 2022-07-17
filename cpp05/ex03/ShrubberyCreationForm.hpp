@@ -11,6 +11,7 @@ class ShrubberyCreationForm : public AForm
 				ShrubberyCreationForm(void);
 				ShrubberyCreationForm(const std::string _target);
 				~ShrubberyCreationForm(void);
+				ShrubberyCreationForm(ShrubberyCreationForm const & src);
 				ShrubberyCreationForm & operator=(ShrubberyCreationForm const & rhs);
 				const std::string &getType() const;
 				int		getGrade(void) const;

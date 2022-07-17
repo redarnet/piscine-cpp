@@ -2,11 +2,20 @@
 #include <string>
 #include <fstream>
 #include <cstring>
-#include <regex>
+#include <cstring>
+#include <string.h>
 
 void	creat_file(std::string file)
 {
-	std::ofstream ofs(file);
+	const char *file1;
+	std::string name;
+
+
+	name.append(file);
+	name.append("_shrubbery");
+
+	file1 = const_cast<char *>(name.c_str());
+	std::ofstream ofs(file1);
 
 
 	ofs << "abres ASCII" << std::endl;
@@ -22,11 +31,18 @@ ShrubberyCreationForm::ShrubberyCreationForm(void)
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string _target) : _bo(0)
 {
-        std::cout << "Copy constructor ShrubberyCreationForm called" << std::endl;
+        std::cout << "constructor ShrubberyCreationForm called" << std::endl;
 		this->_name = "Arbu";
 		this->_echelon1 = 145;
 		this->_echelon2 = 137;
-		creat_file(_target + "_shrubbery");
+		creat_file(_target);
+		return ;
+}
+
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const & src)
+{
+		std::cout << "Copy constructor ShrubberyCreationForm called" << std::endl;
+		*this = src;
 		return ;
 }
 
@@ -39,6 +55,10 @@ ShrubberyCreationForm::~ShrubberyCreationForm(void)
 ShrubberyCreationForm & ShrubberyCreationForm::operator=(ShrubberyCreationForm const & rhs)
 {
 		std::cout << "Copy assignment operator called" << std::endl;
+		this->_name = rhs._name;
+		this->_bo = rhs._bo;
+		this->_echelon1 = rhs._echelon1;
+		this->_echelon2 = rhs._echelon2;
 		return *this;
 }
 
@@ -84,6 +104,8 @@ void	ShrubberyCreationForm::beSigned(Bureaucrat &Maxime)
 	{
 		this->_bo = true;
 	}
+	else
+		throw std::exception();
 
 
 

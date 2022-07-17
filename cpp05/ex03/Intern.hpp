@@ -11,9 +11,16 @@ class Intern
 {
 		public:
 				Intern(void);
+				Intern(Intern const & rhs);
 				~Intern(void);
-				Intern & operator=(Intern const & rhs);
+				Intern & operator=(Intern const & r);
 				AForm *makeForm(std::string Robot, std::string Target);
+				AForm *presi();
+				AForm *robot();
+				AForm *shrubbery();
+		private :
+			std::string _tab [3];
+		AForm *(Intern::*monform[3])(void);
 };
 
 #endif

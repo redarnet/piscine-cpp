@@ -11,6 +11,7 @@ class Form
 		public:
 				Form(void);
 				Form(const std::string _name, const int _echelon1, const int _echelon2);
+				Form(Form const & src);
 				~Form(void);
 				Form & operator=(Form const & rhs);
 				const std::string &getType() const;

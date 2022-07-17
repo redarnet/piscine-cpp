@@ -9,11 +9,18 @@ Bureaucrat::Bureaucrat(void)
 
 Bureaucrat::Bureaucrat(std::string _name, int _echelon)
 {
-        std::cout << "Copy constructor Bureaucrat called" << std::endl;
+        std::cout << "constructor Bureaucrat called" << std::endl;
 		this->_name = _name;
 		this->_echelon = _echelon;
 		GradeToHightException();
 		GradeToLowException();
+        return ;
+}
+
+Bureaucrat::Bureaucrat(Bureaucrat const  & src)
+{
+        std::cout << "copy constructor Bureaucrat called" << std::endl;
+		*this = src;
         return ;
 }
 
@@ -80,8 +87,8 @@ void	Bureaucrat::GradeToLowException()
 void	Bureaucrat::SignForm(Form  &Papier)
 {
 	if (Papier.getBo() == true)
-		std::cout << this->_name << "signed" << Papier << std::endl;
+		std::cout << this->_name << " signed " << Papier.getName() << std::endl;
 	else
-		std::cout << this->_name << "didn't signed" << Papier << std::endl;
+		std::cout << this->_name << " didn't signed " << Papier.getName() << " because < " << this->_name  <<  std::endl;
 
 }

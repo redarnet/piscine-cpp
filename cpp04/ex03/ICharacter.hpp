@@ -2,6 +2,7 @@
 # define ICHARACTER_H
 
 #include <iostream>
+#include "AMateria.hpp"
 
 class AMateria;
 
@@ -20,14 +21,16 @@ class Character : public ICharacter
 	public :
 	Character(void);
 	Character(std::string name);
+	Character(Character const & rhs);
 	~Character(void);
 	virtual void equip(AMateria *m);
 	virtual void unequip(int idx);
 	virtual void use(int idx, ICharacter& target);
+	Character & operator=(Character const & rhs);
 	virtual std::string const & getName() const;
 	private :
 		std::string _name;
-	//	AMateria inventaire[4];
+		AMateria * _inventaire[4];
 };
 
 
