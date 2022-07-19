@@ -23,6 +23,22 @@ class Bureaucrat
 				void	GradeToHightException();
 				void	GradeToLowException();
 				void	SignForm(Form & Papier);
+	class GradeTooHighException : public std::exception
+	{
+		public:
+		virtual const char* what() const throw()
+		{
+			return "Exception : grade is too High\n";
+		}
+	};
+	class GradeTooLowException : public std::exception
+	{
+		public:
+		virtual const char* what() const throw()
+		{
+			return "Exception : grade is too Low\n";
+		}
+	};
 
         private:
                 std::string _name;

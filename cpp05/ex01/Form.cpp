@@ -12,8 +12,14 @@ Form::Form(const std::string _name, const int _echelon1, const int _echelon2) : 
 		this->_name = _name;
 		this->_echelon1 = _echelon1;
 		this->_echelon2 = _echelon2;
-		GradeToHightException();
-		GradeToLowException();
+		if ( this->_echelon1 < 1)
+			throw GradeTooHighException();
+		if ( this->_echelon1 > 150)
+			throw GradeTooLowException();
+		if ( this->_echelon2 < 1)
+			throw GradeTooHighException();
+		if ( this->_echelon2 > 150)
+			throw GradeTooLowException();
 		return ;
 }
 
@@ -75,27 +81,6 @@ std::ostream & operator<<(std::ostream & o, Form const & rhs)
 	return o;
 }
 
-void	Form::GradeToHightException()
-{
-	if ( this->_echelon1 < 1 || this->_echelon2 < 1)
-	{
-		throw std::exception();
-	}
-	else
-	{
-
-	}
-}
-
-void	Form::GradeToLowException()
-{
-	if ( this->_echelon1 > 150 || this->_echelon2 > 150)
-		throw std::exception();
-	else
-	{
-	}
-}
-
 
 void	Form::beSigned(Bureaucrat &Maxime)
 {
@@ -104,6 +89,6 @@ void	Form::beSigned(Bureaucrat &Maxime)
 		this->_bo = true;
 	}
 	else
-		throw std::exception();
+		throw GradeTooLowException();
 }
 

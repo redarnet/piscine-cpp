@@ -5,6 +5,10 @@
 #include <cstring>
 #include <string.h>
 
+void	creat_arbre()
+{
+
+}
 void	creat_file(std::string file)
 {
 	const char *file1;
@@ -17,8 +21,19 @@ void	creat_file(std::string file)
 	file1 = const_cast<char *>(name.c_str());
 	std::ofstream ofs(file1);
 
-
-	ofs << "abres ASCII" << std::endl;
+	ofs << "       _" << std::endl;
+	ofs << "      | |" << std::endl;
+	ofs << "     |   |" << std::endl;
+	ofs << "    |     |" << std::endl;
+	ofs << "   |       |" << std::endl;
+	ofs << "  |         |" << std::endl;
+	ofs << " |           |" << std::endl;
+	ofs << "|             |" << std::endl;
+	ofs << "---------------" << std::endl;
+	ofs << "      | |" << std::endl;
+	ofs << "    -------    " << std::endl;
+	ofs << "    |     |" << std::endl;
+	ofs << "    -------    " << std::endl;
 	ofs.close();
 
 }

@@ -12,8 +12,10 @@ Bureaucrat::Bureaucrat(std::string _name, int _echelon)
         std::cout << "constructor Bureaucrat called" << std::endl;
 		this->_name = _name;
 		this->_echelon = _echelon;
-		GradeToHightException();
-		GradeToLowException();
+		if ( this->_echelon < 1)
+			throw GradeTooHighException();
+		if ( this->_echelon > 150)
+			throw GradeTooLowException();
         return ;
 }
 
@@ -43,7 +45,7 @@ void		Bureaucrat::incre_eche()
 {
 	this->_echelon--;
 	if (this->_echelon < 1)
-		throw std::exception();
+		throw GradeTooHighException();
 }
 
 
@@ -51,7 +53,7 @@ void		Bureaucrat::decre_eche()
 {
 	this->_echelon++;
 	if (this->_echelon > 150)
-		throw std::exception();
+			throw GradeTooLowException();
 }
 
 int		Bureaucrat::getGrade() const
@@ -70,19 +72,6 @@ std::ostream & operator<<(std::ostream & o, Bureaucrat const & rhs)
 	return o;
 }
 
-void	Bureaucrat::GradeToHightException()
-{
-	if ( this->_echelon < 1)
-	{
-		throw std::exception();
-	}
-}
-
-void	Bureaucrat::GradeToLowException()
-{
-	if ( this->_echelon > 150)
-		throw std::exception();
-}
 
 void	Bureaucrat::SignForm(Form  &Papier)
 {

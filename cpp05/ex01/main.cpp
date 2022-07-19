@@ -17,7 +17,7 @@ int main()
 	}
 	catch(std::exception & e)
 	{
-		std::cout << "error" << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 
 	std::cout << " - - - - - -" << std::endl;
@@ -35,7 +35,7 @@ int main()
 	}
 	catch(std::exception & e)
 	{
-		std::cout << "error" << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 
 	std::cout << " - - - - - -" << std::endl;

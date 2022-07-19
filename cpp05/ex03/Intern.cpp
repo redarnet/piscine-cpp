@@ -52,6 +52,7 @@ AForm	*Intern::makeForm(std::string PO, std::string Target)
 	int i = 0;
 	AForm * res;
 
+	res = NULL;
 	monform[0] = &Intern::robot;
 	monform[1] = &Intern::presi;
 	monform[2] = &Intern::shrubbery;
@@ -66,9 +67,11 @@ AForm	*Intern::makeForm(std::string PO, std::string Target)
 		i++;
 	}
 	if (i >= 3)
-		return NULL;
+	{
+		std::cout << "Wrong Name" << std::endl;
+		return res;
+	}
 	res = (this->*(monform[i]))(Target);
 	std::cout << Target << std::endl;
-	// Robot->changeName(PO);
 	return res;
 }

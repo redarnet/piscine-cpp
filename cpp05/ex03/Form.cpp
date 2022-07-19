@@ -12,8 +12,14 @@ AForm::AForm(const std::string _name, const int _echelon1, const int _echelon2) 
 		this->_name = _name;
 		this->_echelon1 = _echelon1;
 		this->_echelon2 = _echelon2;
-		GradeToHightException();
-		GradeToLowException();
+		if ( this->_echelon1 < 1)
+			throw GradeTooHighException();
+		if ( this->_echelon1 > 150)
+			throw GradeTooLowException();
+		if ( this->_echelon2 < 1)
+			throw GradeTooHighException();
+		if ( this->_echelon2 > 150)
+			throw GradeTooLowException();
 		return ;
 }
 
@@ -56,11 +62,6 @@ std::string AForm::getName() const
 	return this->_name;
 }
 
-std::string &AForm::changeName(std::string Name)
-{
-	this->_name = Name;
-	return this->_name;
-}
 
 
 bool		AForm::getBo() const
@@ -81,27 +82,6 @@ std::ostream & operator<<(std::ostream & o, AForm const & rhs)
 	return o;
 }
 
-void	AForm::GradeToHightException()
-{
-	if ( this->_echelon1 < 1 || this->_echelon2 < 1)
-	{
-		throw std::exception();
-	}
-	else
-	{
-
-	}
-}
-
-void	AForm::GradeToLowException()
-{
-	if ( this->_echelon1 > 150 || this->_echelon2 > 150)
-		throw std::exception();
-	else
-	{
-	}
-}
-
 
 void	AForm::beSigned(Bureaucrat &Maxime)
 {
@@ -120,6 +100,6 @@ void	AForm::execute(Bureaucrat const &executor)
 	if (getBo() == 1 && executor.getGrade() <=  getGrade2())
 	std::cout << executor.getName() << " can execute " << getName() << std::endl;
 	else
-		throw std::exception();
+		throw Cantexecute();
 }
 

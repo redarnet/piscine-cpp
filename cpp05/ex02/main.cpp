@@ -12,7 +12,7 @@ int main()
 	{
 	try
 	{
-		ShrubberyCreationForm Arbu("Abre");
+		ShrubberyCreationForm Arbu("Arbre");
 		Bureaucrat Maxime("Maxime", 1);
 
 		std::cout << Arbu << std::endl;
@@ -23,7 +23,7 @@ int main()
 	}
 	catch(std::exception & e)
 	{
-		std::cout << "error" << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 	}
 
@@ -43,7 +43,7 @@ int main()
 	}
 	catch(std::exception & e)
 	{
-		std::cout << "error" << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 	}
 
@@ -63,7 +63,7 @@ int main()
 	}
 	catch(std::exception & e)
 	{
-		std::cout << "error" << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 	}
 

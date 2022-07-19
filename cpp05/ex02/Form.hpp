@@ -19,11 +19,33 @@ class AForm
 				virtual int		getGrade2(void) const;
 				virtual std::string getName(void) const;
 				virtual bool	getBo(void) const;
-				void	GradeToHightException();
-				void	GradeToLowException();
 				virtual void	beSigned(Bureaucrat &Maxime);
 				void execute(Bureaucrat const & executor);
 
+	class GradeTooHighException : public std::exception
+	{
+		public:
+		virtual const char* what() const throw()
+		{
+			return "Exception : grade is too High\n";
+		}
+	};
+	class GradeTooLowException : public std::exception
+	{
+		public:
+		virtual const char* what() const throw()
+		{
+			return "Exception : grade is too Low\n";
+		}
+	};
+	class Cantexecute : public std::exception
+	{
+		public:
+		virtual const char* what() const throw()
+		{
+			return "Exception : wrong grade\n";
+		}
+	};
 		private:
 				std::string _name;
 				int _echelon1;

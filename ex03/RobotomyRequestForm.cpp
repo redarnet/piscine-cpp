@@ -1,7 +1,5 @@
 #include "RobotomyRequestForm.hpp"
-#include <time.h>
-#include <stdio.h>
-#include <stdlib.h>
+
 
 void	drill_noise(std::string target)
 {
@@ -23,20 +21,15 @@ RobotomyRequestForm::RobotomyRequestForm(void)
 		return ;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const & src) : AForm(src)
-{
-		std::cout << "Copy constructor RobotomyRequestForm called" << std::endl;
-		*this = src;
-		return ;
-}
-
 RobotomyRequestForm::RobotomyRequestForm(const std::string _target) : _bo(0)
 {
-        std::cout << "constructor RobotomyRequestForm called" << std::endl;
+        std::cout << "Copy constructor RobotomyRequestForm called" << std::endl;
 		drill_noise(_target);
 		this->_name = "Robot";
 		this->_echelon1 = 72;
 		this->_echelon2 = 45;
+			GradeToHightException();
+			GradeToLowException();
 		return ;
 }
 
@@ -49,10 +42,6 @@ RobotomyRequestForm::~RobotomyRequestForm(void)
 RobotomyRequestForm & RobotomyRequestForm::operator=(RobotomyRequestForm const & rhs)
 {
 		std::cout << "Copy assignment operator called" << std::endl;
-		this->_name = rhs._name;
-		this->_bo = rhs._bo;
-		this->_echelon1 = rhs._echelon1;
-		this->_echelon2 = rhs._echelon2;
 		return *this;
 }
 
@@ -70,6 +59,13 @@ int		RobotomyRequestForm::getGrade2() const
 
 std::string RobotomyRequestForm::getName() const
 {
+	return this->_name;
+}
+
+
+std::string &RobotomyRequestForm::changeName(std::string Name)
+{
+	this->_name = Name;
 	return this->_name;
 }
 
@@ -92,6 +88,27 @@ std::ostream & operator<<(std::ostream & o, RobotomyRequestForm const & rhs)
 	return o;
 }
 
+void	RobotomyRequestForm::GradeToHightException()
+{
+	if ( this->_echelon1 < 1 || this->_echelon2 < 1)
+	{
+		throw std::exception();
+	}
+	else
+	{
+
+	}
+}
+
+void	RobotomyRequestForm::GradeToLowException()
+{
+	if ( this->_echelon1 > 150 || this->_echelon2 > 150)
+		throw std::exception();
+	else
+	{
+	}
+}
+
 
 void	RobotomyRequestForm::beSigned(Bureaucrat &Maxime)
 {
@@ -99,5 +116,8 @@ void	RobotomyRequestForm::beSigned(Bureaucrat &Maxime)
 	{
 		this->_bo = true;
 	}
+
+
+
 }
 
