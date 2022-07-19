@@ -15,7 +15,7 @@ class Convert
 		~Convert();
 
 		Convert &		operator=( Convert const & rhs );
-		int		to_int(float S);
+		int		to_int(const char *str);
 		float string_float(const char *str);
 
 	private:

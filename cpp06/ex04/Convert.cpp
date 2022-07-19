@@ -40,6 +40,14 @@ float Convert::string_float(const char *str)
 	return f;
 }
 
+int		Convert::to_int(const char *str)
+{
+	int i;
+
+	i = static_cast<int>(atof(str));
+	return i;
+}
+
 Convert &				Convert::operator=( Convert const & rhs )
 {
 	if ( this != &rhs )
@@ -48,7 +56,7 @@ Convert &				Convert::operator=( Convert const & rhs )
 	return *this;
 }
 
-int		Convert::to_int(float S)
-{
-	return (static_cast<int>(S));
-}
+// int		Convert::to_int(float S)
+// {
+// 	return (static_cast<int>(S));
+// }
