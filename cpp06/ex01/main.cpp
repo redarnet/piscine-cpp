@@ -34,14 +34,18 @@ uintptr_t serialize(Data *ptr)
 
 int main(void)
 {
-	Data *ptr;
+	Data *ptr = new Data;
 	uintptr_t raw;
 
-	ptr = NULL;
+	ptr->str =  "hello";
+	
 	// ptr->i = 0;
-	deserialize(raw);
-	serialize(ptr);
+	raw = serialize(ptr);
+	ptr = deserialize(raw);
+	std::cout << "str data= " << ptr->str << std::endl;
+	std::cout << "raw data= " << raw.str << std::endl;
 
+	delete ptr;
 
 
 	return 0;

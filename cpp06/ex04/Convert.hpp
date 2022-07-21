@@ -15,8 +15,12 @@ class Convert
 		~Convert();
 
 		Convert &		operator=( Convert const & rhs );
-		int		to_int(const char *str);
-		float string_float(const char *str);
+		void		to_int(const char *str);
+		void		to_char(const char *str);
+		void		to_float(const char *str);
+		void		to_double(const char *str);
+		void		impossible(const char *str);
+		void		convert_string(int type, const char *str);
 
 	private:
 
