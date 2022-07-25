@@ -11,12 +11,13 @@ class Span
         public:
                 Span(void);
                 Span(int _N);
+				Span(Span const & src);
                 ~Span(void);
                 Span & operator=(Span const & rhs);
 			int		getNum(void) const;
 			void	addNumber(int x);
-			void	shortestSpan();
-			void	longestSpan();
+			int	shortestSpan();
+			int	longestSpan();
 			void	affiche_list();
 
         private:

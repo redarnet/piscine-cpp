@@ -1,5 +1,5 @@
+NAME = Mutant
 
-NAME = find
 CC = c++
 
 OBJ_DIR = obj

@@ -14,7 +14,7 @@ int main()
 	lst.push_back(63);
 	try
 	{
-		easyfind(lst, 3);
+		std::cout << easyfind(lst, 3) << std::endl;
 	}
 	catch (std::exception &e)
 	{
